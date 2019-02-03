@@ -4,7 +4,12 @@ class QueryBuilder:
 
     def addHeader(self, headerName, headerContent):
         self.string += headerName + ': ' + headerContent +'\r\n'
+    
+    def endOfHeaders(self):
+        self.string += '\r\n'
+
+    def addBody(self, body):
+        self.string += body
 
     def getString(self):
-        self.string += '\r\n'
         return self.string
